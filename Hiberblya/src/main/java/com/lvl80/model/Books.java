@@ -1,6 +1,5 @@
 package com.lvl80.model;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -25,7 +24,6 @@ public class Books implements Serializable {
         this.title = title;
         this.client = client;
     }
-
 
     public Clients getClient() {
         return client;
