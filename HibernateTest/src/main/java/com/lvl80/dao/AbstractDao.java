@@ -3,11 +3,10 @@ package com.lvl80.dao;
 import com.lvl80.utils.HibernateFactoryUtil;
 
 import javax.persistence.EntityManager;
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public class AbstractDao <T extends Serializable> {
+public class AbstractDao <T> {
     private Class<T> class_;
 
     public void setClass_(Class<T> class_) {

@@ -3,12 +3,11 @@ package com.lvl80.types;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Teams")
-public class Team implements Serializable {
+public class Team {
     @Id
     private long id;
 

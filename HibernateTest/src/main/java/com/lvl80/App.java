@@ -8,3 +8,6 @@ public class App {
         teamDao.findAll().forEach(System.out::println);
     }
 }
+
+//TODO сервис для работы 2х дао
+//TODO класс игроков
