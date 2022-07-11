@@ -50,8 +50,4 @@ public class AbstractDao <T> {
     public List<T> findAll(){
         return entityManager.createQuery("SELECT e FROM " + class_.getSimpleName() + " e", class_).getResultList();
     }
-
-    public T findById(long id, Map<String, Object> prop){
-        return entityManager.find(class_,id,prop);
-    }
 }
