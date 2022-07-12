@@ -30,6 +30,7 @@ public class App {
             checkValue(choice);
         }
     }
+
     public static void checkValue(int choice){
         int id;
         String[] choices = null;
