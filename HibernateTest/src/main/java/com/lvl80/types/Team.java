@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@NamedEntityGraphs(
+        @NamedEntityGraph(name = "Team_graph", attributeNodes = {
+                        @NamedAttributeNode(value = "players")
+                }
+        )
+)
 @Entity
 @Table(name = "Teams")
 public class Team implements Serializable {

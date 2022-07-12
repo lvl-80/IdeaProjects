@@ -14,6 +14,6 @@ public class PlayerDao extends AbstractDao{
     }
 
     public List<Player> findAll(){
-        return getEntityManager().createQuery("SELECT p FROM Player p", Player.class).getResultList();
+        return getEntityManager().createQuery("SELECT p FROM Player p join fetch p.team", Player.class).getResultList();
     }
 }

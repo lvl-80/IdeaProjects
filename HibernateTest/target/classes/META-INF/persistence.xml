@@ -15,7 +15,7 @@
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:8889/Football"/>
             <property name="javax.persistence.jdbc.user" value="sudaevnikita"/>
             <property name="javax.persistence.jdbc.password" value="A10o9nne"/>
-            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.show_sql" value="false"/>
         </properties>
     </persistence-unit>
 
