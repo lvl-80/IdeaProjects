@@ -4,13 +4,14 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Teams")
-public class Team {
+public class Team implements Serializable {
     @Id
     @GeneratedValue(generator = "ID_GENERATOR")
     private long id;
@@ -21,7 +22,9 @@ public class Team {
     @Column(name = "Capital")
     private int capital;
 
-    @OneToMany(mappedBy = "team", cascade = CascadeType.PERSIST)
+    @OneToMany(
+            mappedBy = "team",
+            cascade = CascadeType.PERSIST)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Player> players = new ArrayList<>();
 
@@ -67,7 +70,7 @@ public class Team {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", capital=" + capital +
-                ", players=" + players +
+                ", players=" + players.size() +
                 '}';
     }
 

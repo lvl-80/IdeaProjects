@@ -3,8 +3,6 @@ package com.lvl80.dao;
 import com.lvl80.utils.HibernateFactoryUtil;
 
 import javax.persistence.EntityManager;
-import java.util.List;
-import java.util.Map;
 
 public class AbstractDao <T> {
     private Class<T> class_;
@@ -39,15 +37,7 @@ public class AbstractDao <T> {
 
     public void deleteById(long id) {
         entityManager.getTransaction().begin();
-        entityManager.remove(findById(id));
+        entityManager.remove(entityManager.find(class_, id));
         entityManager.getTransaction().commit();
-    }
-
-    public T findById(long id){
-        return entityManager.find(class_, id);
-    }
-
-    public List<T> findAll(){
-        return entityManager.createQuery("SELECT e FROM " + class_.getSimpleName() + " e", class_).getResultList();
     }
 }

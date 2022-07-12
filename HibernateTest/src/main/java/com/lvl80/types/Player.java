@@ -1,11 +1,12 @@
 package com.lvl80.types;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Players")
-public class Player {
+public class Player implements Serializable {
     @Id
     @GeneratedValue
     private long id;
