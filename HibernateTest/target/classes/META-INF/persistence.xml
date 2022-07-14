@@ -16,7 +16,6 @@
             <property name="javax.persistence.jdbc.user" value="sudaevnikita"/>
             <property name="javax.persistence.jdbc.password" value="A10o9nne"/>
             <property name="hibernate.show_sql" value="true"/>
-            <property name="javax.persistence.fetchgraph" value="true"/>
         </properties>
     </persistence-unit>
 

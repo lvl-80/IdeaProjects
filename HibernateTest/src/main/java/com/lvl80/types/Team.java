@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Objects;
 
 @NamedEntityGraphs(
-        @NamedEntityGraph(name = "Team_graph", attributeNodes = {
+        @NamedEntityGraph(
+                name = "Team_graph",
+                attributeNodes = {
                         @NamedAttributeNode(value = "players")
                 }
         )
@@ -30,7 +32,9 @@ public class Team implements Serializable {
 
     @OneToMany(
             mappedBy = "team",
-            cascade = CascadeType.PERSIST)
+            cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY
+    )
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Player> players = new ArrayList<>();
 
