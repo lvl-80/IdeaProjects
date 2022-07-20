@@ -1,7 +1,6 @@
 plugins {
     id 'application'
     id 'war'
-    id 'jwar-plugin'
 }
 
 repositories {
@@ -27,6 +26,11 @@ java {
 
 war {
     archiveName "app.war"
+}
+
+task copyWarToTomcat(type: Copy) {
+    from(war.archiveFile.get())
+    into("/Users/nikitasudaev/apache-tomcat-9.0.64/webapps/")
 }
 
 copyWarToTomcat.dependsOn war

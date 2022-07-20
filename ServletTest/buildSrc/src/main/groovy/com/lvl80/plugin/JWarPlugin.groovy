@@ -15,8 +15,7 @@ class JWarPlugin implements Plugin<Project> {
         def map = [group: "jwar", type: Copy]
         project.task(map, "copyWarToTomcat") {
             doLast() {
-                project.from(project.war.archiveFile.get())
-                project.into("/Users/nikitasudaev/apache-tomcat-9.0.64/webapps/")
+
             }
         }
     }
