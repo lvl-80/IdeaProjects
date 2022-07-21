@@ -9,7 +9,8 @@ import java.io.IOException;
 
 public class MyTestServlet2 extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String path = request.getParameter("path");
         if (path != null) {
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher(path);
