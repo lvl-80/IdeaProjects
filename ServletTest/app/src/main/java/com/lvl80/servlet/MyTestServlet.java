@@ -22,23 +22,9 @@ public class MyTestServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
-
-        String name = request.getParameter("username");
-        String age = request.getParameter("userage");
-        String gender = request.getParameter("gender");
-        String country = request.getParameter("country");
-        String[] courses = request.getParameterValues("courses");
-
-        try {
-            writer.println("<p>Name: " + name + "</p>");
-            writer.println("<p>Age: " + age + "</p>");
-            writer.println("<p>Gender: " + gender + "</p>");
-            writer.println("<p>Country: " + country + "</p>");
-            writer.println("<h4>Courses</h4>");
-            for(String course: courses)
-                writer.println("<li>" + course + "</li>");
-        } finally {
-            writer.close();
-        }
+        String name = request.getParameter("name");
+        String age = request.getParameter("age");
+        writer.write(String.format("<h1>Hello, %s</h1><p>Your age is %s",name,age));
+        writer.close();
     }
 }
