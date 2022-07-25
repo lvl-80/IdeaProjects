@@ -3,15 +3,13 @@ package com.lvl80.model;
 public class User {
     private String login;
     private String password;
-    private String name;
 
     public User() {
     }
 
-    public User(String name, String password, String login) {
+    public User(String login, String password) {
         this.login = login;
         this.password = password;
-        this.name = name;
     }
 
     public String getLogin() {
@@ -28,13 +26,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
